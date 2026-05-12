@@ -1,3 +1,79 @@
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f8fb;
+    color: #222;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(90deg, #0056b3 0%, #0077cc 100%);
+    color: #fff;
+    text-align: center;
+}
+.hero-section h1, .hero-section .display-3 {
+    color: #fff;
+    font-weight: 700;
+}
+.hero-section p.lead {
+    color: #e3f0ff;
+}
+.hero-section .btn-warning {
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.2s;
+}
+.hero-section .btn-warning:hover, .hero-section .btn-warning:focus {
+    background: #ffb300;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(255,183,0,0.12);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover, .card:focus-within {
+    box-shadow: 0 8px 32px rgba(0,119,204,0.15), 0 2px 8px rgba(0,0,0,0.05);
+    transform: translateY(-4px) scale(1.02);
+    z-index: 2;
+}
+
+/* Footer Styling */
+footer.bg-dark {
+    background: #222 !important;
+    color: #f4f8fb !important;
+    border-top: 2px solid #0056b3;
+}
+footer .fw-bold {
+    color: #ffb300;
+}
+
+/* Responsive: Below 768px */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .why-choose-us-section .row, .insurance-types-section .row {
+        row-gap: 2rem;
+    }
+    .testimonial-section {
+        padding: 1.5rem 0.5rem;
+    }
+    footer {
+        font-size: 0.95em;
+        padding: 1.2em 0;
+    }
+}
 # Hero Section
 .hero-section {
     background: linear-gradient(90deg, #e3f0ff 0%, #f4f8fb 100%);

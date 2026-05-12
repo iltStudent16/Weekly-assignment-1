@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance Home</title>
+    <title>Pinnacle Shield Insurance - Home</title>
+    <!-- Bootstrap 5.3.2 CSS (as specified) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-        <!-- Bootstrap 5 CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">SecureAuto</a>
+                <a class="navbar-brand" href="index.html">Pinnacle Shield Insurance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,44 +35,107 @@
                 </div>
             </div>
         </nav>
-        <section class="hero-section text-center py-5 bg-light">
+    </header>
+
+    <main>
+        <section class="hero-section text-center py-5" style="background: linear-gradient(90deg, #0056b3 0%, #0077cc 100%); color: #fff;">
             <div class="container">
-                <h1 class="display-4 fw-bold mb-3">Drive with Confidence. Insure with Experience.</h1>
+                <h1 class="display-3 fw-bold mb-3">Drive with Confidence. Insure with Experience.</h1>
                 <p class="lead mb-4">Over 100 years of trusted auto and home insurance, protecting what matters most to you.</p>
-                <a href="quote.html" class="btn btn-lg btn-primary px-4 py-2 shadow">Get Your Free Quote</a>
+                <a href="quote.html" class="btn btn-warning btn-lg px-4 py-2 shadow">Get Your Free Quote</a>
             </div>
         </section>
-    <section class="cards-section">
-        <h2>Choose Your Insurance</h2>
-        <div class="card-container">
-            <div class="insurance-card" tabindex="0">
-                <h3>Auto Insurance</h3>
-                <p>Protect your vehicle with comprehensive coverage.</p>
-                <a href="quote.html" class="card-cta">Select Auto</a>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-bold">Why Choose Us?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-lightning-charge"></i></div>
+                                <h5 class="card-title fw-bold">Fast Quotes</h5>
+                                <p class="card-text">Get your insurance quote in minutes with our streamlined process.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-shield-check"></i></div>
+                                <h5 class="card-title fw-bold">Trusted Coverage</h5>
+                                <p class="card-text">Over a century of experience providing reliable protection for your assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-headset"></i></div>
+                                <h5 class="card-title fw-bold">24/7 Support</h5>
+                                <p class="card-text">Our dedicated team is always available to help, day or night.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="insurance-card" tabindex="0">
-                <h3>Home Insurance</h3>
-                <p>Safeguard your home and belongings from unexpected events.</p>
-                <a href="#" class="card-cta">Select Home</a>
+        </section>
+
+        <!-- Insurance Types Section -->
+        <section class="insurance-types-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-bold">Insurance Types</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-car-front"></i></div>
+                                <h5 class="card-title fw-bold">Auto Insurance</h5>
+                                <p class="card-text">Comprehensive coverage for your vehicle, so you can drive with peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-house-door"></i></div>
+                                <h5 class="card-title fw-bold">Home Insurance</h5>
+                                <p class="card-text">Protect your home and belongings from unexpected events and disasters.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="mb-3 display-5 text-primary"><i class="bi bi-people"></i></div>
+                                <h5 class="card-title fw-bold">Bundle & Save</h5>
+                                <p class="card-text">Combine auto and home insurance for the best value and convenience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="insurance-card" tabindex="0">
-                <h3>Bundle & Save</h3>
-                <p>Combine auto and home for the best value and convenience.</p>
-                <a href="#" class="card-cta">Select Bundle</a>
+        </section>
+
+        <section class="testimonial-section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-placeholder">
+                <p><em>Testimonial coming soon...</em></p>
             </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <div class="mb-2 fw-bold">Pinnacle Shield Insurance</div>
+            <div class="mb-2">&copy; 2026 Pinnacle Shield Insurance. All rights reserved.</div>
+            <div class="small">Contact: info@pinnacleshield.com | (555) 123-4567</div>
         </div>
-    </section>
-    <section class="testimonial-section">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-placeholder">
-            <p><em>Testimonial coming soon...</em></p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2026 SecureAuto Insurance. All rights reserved.</p>
     </footer>
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap 5.3.2 JS Bundle (as specified) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
