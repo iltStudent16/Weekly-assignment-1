@@ -26,6 +26,9 @@
         <main class="bg-light py-5">
             <div class="container">
                 <h1 class="fw-bold mb-4 text-center" style="color:#ff9800;">Frequently Asked Questions</h1>
+                <div class="mb-4 d-flex justify-content-center">
+                    <input id="faq-search" type="text" class="form-control w-100 w-md-50 w-lg-25" style="max-width:400px;" placeholder="Search FAQs..." aria-label="Search FAQs">
+                </div>
                 <div class="accordion" id="faqAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="faq1-heading">
@@ -35,7 +38,7 @@
                         </h2>
                         <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                We offer auto, home, and life insurance, as well as bundled coverage for maximum value and convenience.
+                                SummitGuard Insurance offers a comprehensive range of insurance products to meet your needs. Our primary offerings include auto insurance, home insurance, and life insurance. We also provide bundled coverage options for customers who want to combine policies for added convenience and savings. No matter your stage of life or unique situation, we have a solution to help protect what matters most to you.
                             </div>
                         </div>
                     </div>
@@ -47,7 +50,7 @@
                         </h2>
                         <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Your premium is based on factors like age, location, coverage level, vehicle/home details, driving record, and more. We use advanced algorithms to ensure fair, personalized rates.
+                                Premiums are determined by a variety of factors to ensure your rate is fair and tailored to your risk profile. For auto insurance, we consider your age, driving history, vehicle type, annual mileage, and location. Home insurance premiums are based on your home's value, construction type, location, and safety features. Life insurance rates depend on your age, health, lifestyle, and coverage amount. We use advanced analytics to provide you with the best possible rate for your circumstances.
                             </div>
                         </div>
                     </div>
@@ -59,7 +62,7 @@
                         </h2>
                         <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Yes, you can adjust your coverage level at any time. Contact our support team or log in to your account to make changes.
+                                Absolutely! We understand that your needs may change over time. You can upgrade or reduce your coverage at any point during your policy term. Simply contact our customer service team or log in to your online account to request changes. Our agents are happy to help you find the right level of protection for your current situation.
                             </div>
                         </div>
                     </div>
@@ -71,7 +74,7 @@
                         </h2>
                         <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Factors include your age, driving history, vehicle make/model/year, annual mileage, ZIP code, and selected coverage level.
+                                Several factors influence your auto insurance rate, including your age, driving record, type of vehicle, how much you drive, and where you live. Safer drivers and newer vehicles with advanced safety features often qualify for lower rates. Your chosen coverage level and deductible also play a role in determining your premium.
                             </div>
                         </div>
                     </div>
@@ -83,7 +86,7 @@
                         </h2>
                         <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Yes! Homes with security systems and fire sprinklers may qualify for discounts on their premiums.
+                                Yes, installing a security system or fire sprinklers can help lower your home insurance premium. These features reduce the risk of theft, fire, and other losses, making your home safer and less costly to insure. Be sure to let us know about any safety upgrades so we can apply all eligible discounts to your policy.
                             </div>
                         </div>
                     </div>
@@ -95,7 +98,7 @@
                         </h2>
                         <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Basic covers essentials, Standard adds more protection, and Premium offers the highest level of coverage and benefits. See our quote page for details.
+                                Basic coverage provides essential protection for the most common risks and is ideal for those seeking affordable rates. Standard coverage adds extra benefits and higher limits for greater peace of mind. Premium coverage offers the most comprehensive protection, including additional features and the highest coverage limits. You can compare options and see details on our quote page.
                             </div>
                         </div>
                     </div>
@@ -107,7 +110,7 @@
                         </h2>
                         <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faq7-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                You can file a claim online, by phone, or through our mobile app. Our claims team is available 24/7 to assist you.
+                                Filing a claim with SummitGuard is quick and easy. You can submit a claim online through your account, call our 24/7 claims hotline, or use our mobile app. Our dedicated claims team will guide you through every step, from documentation to resolution, ensuring your experience is as smooth as possible.
                             </div>
                         </div>
                     </div>
@@ -119,7 +122,7 @@
                         </h2>
                         <div id="faq8" class="accordion-collapse collapse" aria-labelledby="faq8-heading" data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Absolutely. We use industry-leading security measures to protect your data and privacy at all times.
+                                Yes, protecting your privacy is a top priority for us. We use advanced encryption, secure servers, and strict privacy policies to safeguard your personal information. Your data is never shared with third parties without your consent, and we continuously monitor our systems to ensure your information remains safe.
                             </div>
                         </div>
                     </div>
@@ -135,5 +138,23 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
+        <script>
+            // FAQ Search/Filter Functionality
+            var searchInput = document.getElementById('faq-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    var searchTerm = this.value.toLowerCase();
+                    var items = document.querySelectorAll('.accordion-item');
+                    items.forEach(function(item) {
+                        var text = item.textContent.toLowerCase();
+                        if (text.indexOf(searchTerm) !== -1) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        </script>
 </body>
 </html>

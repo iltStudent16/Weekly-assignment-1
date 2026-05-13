@@ -1,3 +1,39 @@
+/* Print-friendly quote results */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+    #quoteResult, #quoteResult * {
+        visibility: visible !important;
+    }
+    #quoteResult {
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        padding: 2rem !important;
+        margin: 0 !important;
+        z-index: 9999;
+    }
+    .navbar, footer, form, #dynamicFormFields, #savedQuotesSection, #faq-search {
+        display: none !important;
+    }
+    .card, .table {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Animated transitions for quote results */
+.quote-fade-in {
+    animation: quoteFadeIn 1s;
+}
+@keyframes quoteFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 /* CSS Reset */
 *, *::before, *::after {
     box-sizing: border-box;

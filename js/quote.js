@@ -445,12 +445,95 @@ window.addEventListener('DOMContentLoaded', function() {
 		result.appendChild(againBtn);
 		// Save Quote button
 		const saveBtn = document.createElement('button');
-		saveBtn.className = 'btn btn-warning mt-3';
+		saveBtn.className = 'btn btn-warning mt-3 me-2';
 		saveBtn.textContent = 'Save Quote';
 		saveBtn.onclick = function() {
-			alert('Your quote has been saved! (This is a placeholder. Implement persistent storage as needed.)');
+			// Save quote data to localStorage
+			const quoteData = {
+				name, type, monthly: monthly.toFixed(2), annual: (monthly*12).toFixed(2), breakdown,
+				date: new Date().toLocaleString()
+			};
+			let quotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
+			quotes.push(quoteData);
+			localStorage.setItem('savedQuotes', JSON.stringify(quotes));
+			renderSavedQuotes();
+			alert('Quote saved!');
 		};
 		result.appendChild(saveBtn);
+		// Print Quote button
+		const printBtn = document.createElement('button');
+		printBtn.className = 'btn btn-outline-secondary mt-3';
+		printBtn.textContent = 'Print Quote';
+		printBtn.onclick = function() {
+			window.print();
+		};
+		result.appendChild(printBtn);
+
+		// Animate result fade-in
+		result.classList.add('quote-fade-in');
+		setTimeout(() => result.classList.remove('quote-fade-in'), 1000);
+
+		// Show saved quotes below
+		renderSavedQuotes();
+	}
+
+	// Saved Quotes Section
+	function renderSavedQuotes() {
+		let container = document.getElementById('savedQuotesSection');
+		if (!container) {
+			container = document.createElement('div');
+			container.id = 'savedQuotesSection';
+			container.className = 'mt-5';
+			document.getElementById('quoteResult').after(container);
+		}
+		let quotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
+		if (quotes.length === 0) {
+			container.innerHTML = '<h5 class="text-center text-muted">No saved quotes yet.</h5>';
+			return;
+		}
+		container.innerHTML = '<h4 class="mb-3">Saved Quotes</h4>';
+		quotes.forEach((q, i) => {
+			const card = document.createElement('div');
+			card.className = 'card mb-3';
+			card.innerHTML = `<div class="card-body">
+				<div class="d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<strong>${q.type}</strong> for <strong>${q.name}</strong><br>
+						<span class="text-success">$${q.monthly}/mo</span> ($${q.annual}/yr)
+						<div class="small text-muted">${q.date}</div>
+					</div>
+					<button class="btn btn-sm btn-danger ms-2" data-index="${i}">Delete</button>
+				</div>
+				<div class="mt-2">
+					<a href="#" class="show-breakdown small">Show breakdown</a>
+					<div class="breakdown-table d-none mt-2"></div>
+				</div>
+			</div>`;
+			// Delete button
+			card.querySelector('button[data-index]').onclick = function() {
+				quotes.splice(i, 1);
+				localStorage.setItem('savedQuotes', JSON.stringify(quotes));
+				renderSavedQuotes();
+			};
+			// Show breakdown
+			card.querySelector('.show-breakdown').onclick = function(e) {
+				e.preventDefault();
+				const table = card.querySelector('.breakdown-table');
+				if (table.classList.contains('d-none')) {
+					table.classList.remove('d-none');
+					table.innerHTML = `<table class="table table-sm table-bordered"><thead><tr><th>Factor</th><th>Your Info</th><th>Impact</th></tr></thead><tbody>${q.breakdown.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join('')}</tbody></table>`;
+					this.textContent = 'Hide breakdown';
+				} else {
+					table.classList.add('d-none');
+					this.textContent = 'Show breakdown';
+				}
+			};
+			container.appendChild(card);
+		});
+	}
+
+	// On page load, show saved quotes if any
+	window.addEventListener('DOMContentLoaded', renderSavedQuotes);
 	}
 
 	// Add breakdown row
@@ -470,6 +553,5 @@ window.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
-// quote.js
-// Placeholder for quote-specific JavaScript functionality.
-// You can move quote form logic here if needed in the future.
+
+// Print-friendly CSS is handled in styles.css
