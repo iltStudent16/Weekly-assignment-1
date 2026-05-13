@@ -86,9 +86,9 @@ window.addEventListener('DOMContentLoaded', function() {
 					<select class="form-select" id="autoMileage" name="autoMileage" required>
 						<option value="">Select</option>
 						<option value="under5">Under 5,000</option>
-						<option value="5-10">5,000–10,000</option>
-						<option value="10-15">10,001–15,000</option>
-						<option value="15-20">15,001–20,000</option>
+						<option value="5-10">5,00010,000</option>
+						<option value="10-15">10,00115,000</option>
+						<option value="15-20">15,00120,000</option>
 						<option value="over20">Over 20,000</option>
 					</select>
 					<div class="invalid-feedback"></div>
@@ -254,8 +254,8 @@ window.addEventListener('DOMContentLoaded', function() {
 					<select class="form-select" id="lifeExercise" name="lifeExercise" required>
 						<option value="">Select</option>
 						<option value="rarely">Rarely</option>
-						<option value="1-2">1–2 times/week</option>
-						<option value="3-4">3–4 times/week</option>
+						<option value="1-2">12 times/week</option>
+						<option value="3-4">34 times/week</option>
 						<option value="5plus">5+ times/week</option>
 					</select>
 					<div class="invalid-feedback"></div>
@@ -554,4 +554,4 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 });
 
-// Print-friendly CSS is handled in styles.css
+// Print-friendly CSS is handled in styles.css 
