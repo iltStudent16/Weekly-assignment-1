@@ -151,54 +151,7 @@ footer .fw-bold {
         gap: 0.5rem !important;
     }
 }
-# Hero Section
-.hero-section {
-    background: linear-gradient(90deg, #e3f0ff 0%, #f4f8fb 100%);
-    padding-top: 4em;
-    padding-bottom: 4em;
-    margin-bottom: 2em;
-    border-radius: 0 0 32px 32px;
-    box-shadow: 0 4px 24px rgba(0,85,165,0.04);
-}
-.hero-section h1 {
-    color: #003366;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5em;
-}
-.hero-section p.lead {
-    color: #0055a5;
-    font-size: 1.25rem;
-    margin-bottom: 1.5em;
-}
-.hero-section .btn-primary {
-    background: #0077cc;
-    border: none;
-    font-size: 1.15rem;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: background 0.2s, transform 0.2s;
-}
-.hero-section .btn-primary:hover, .hero-section .btn-primary:focus {
-    background: #005fa3;
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(0,119,204,0.12);
-}
-@media (max-width: 600px) {
-    .hero-section {
-        padding-top: 2em;
-        padding-bottom: 2em;
-        border-radius: 0 0 16px 16px;
-    }
-    .hero-section h1 {
-        font-size: 1.5rem;
-    }
-    .hero-section p.lead {
-        font-size: 1rem;
-    }
-}
 body {
-    /* ...existing code... */
     margin: 0;
     padding: 0;
     background: #f4f8fb;
@@ -251,9 +204,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    /* Removed position: fixed to prevent overlap */
 }
 form label {
     display: block;
