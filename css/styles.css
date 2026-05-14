@@ -5,53 +5,36 @@
     }
     #quoteResult, #quoteResult * {
         visibility: visible !important;
-/* --- Scroll Reveal Animations --- */
-.scroll-reveal-up {
     }
     #quoteResult {
         position: absolute;
         left: 0; right: 0; top: 0;
-.scroll-reveal-fade {
         background: #fff !important;
         color: #000 !important;
         box-shadow: none !important;
-.revealed.scroll-reveal-up {
         padding: 2rem !important;
         margin: 0 !important;
         z-index: 9999;
-.revealed.scroll-reveal-fade {
     }
     .navbar, footer, form, #dynamicFormFields, #savedQuotesSection, #faq-search {
-
-/* --- Counter Animation (handled in JS) --- */
-.counter {
         display: none !important;
     }
     .card, .table {
-.revealed .counter, .counter.revealed {
         background: #fff !important;
         color: #000 !important;
-
-/* --- CTA Pulse Animation --- */
-.cta-pulse {
         box-shadow: none !important;
     }
 }
 
 /* Animated transitions for quote results */
-@keyframes ctaPulse {
 .quote-fade-in {
     animation: quoteFadeIn 1s;
 }
 @keyframes quoteFadeIn {
-
-/* --- Navbar Underline Animation --- */
-.navbar-nav .nav-link {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 /* CSS Reset */
-.navbar-nav .nav-link::after {
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -62,45 +45,28 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f4f8fb;
     color: #222;
-.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
 }
 
-.navbar-nav .nav-link.active {
 /* Hero Section */
 .hero-section {
-
-/* --- Icon Bounce Animation --- */
-.icon-bounce {
     padding-top: 5rem;
     padding-bottom: 5rem;
-.icon-bounce:hover {
     background: linear-gradient(90deg, #222 0%, #ff9800 100%);
     color: #fff;
-@keyframes iconBounce {
     text-align: center;
 }
 .hero-section h1, .hero-section .display-3 {
     color: #fff;
     font-weight: 700;
 }
-
-/* --- Button Hover Lift --- */
-.btn, .btn-check + label {
 .hero-section p.lead {
     color: #ffe082;
-.btn:hover, .btn:focus, .btn-check:checked + label, .btn-check + label:hover {
 }
 .hero-section .btn-warning {
     font-weight: 600;
-
-/* --- Sticky Mobile CTA Bar --- */
-.cta-mobile-bar {
     border-radius: 6px;
     transition: background 0.2s, transform 0.2s;
     color: #222;
-
-/* --- Trust Badges --- */
-.trust-badges .badge-item {
     background: #ff9800;
     border: none;
 }
@@ -111,15 +77,10 @@ body {
     box-shadow: 0 6px 24px rgba(255,183,0,0.12);
 }
 
-/* --- Progress Stepper --- */
-.progress-stepper-wrapper {
-
 /* Card Hover Effects */
-.step {
 .card {
     transition: box-shadow 0.2s, transform 0.2s;
 }
-.step-circle {
 .card:hover, .card:focus-within {
     box-shadow: 0 8px 32px rgba(0,119,204,0.15), 0 2px 8px rgba(0,0,0,0.05);
     transform: translateY(-4px) scale(1.02);
@@ -134,31 +95,20 @@ footer.bg-dark {
 }
 footer .fw-bold {
     color: #ff9800;
-.step-circle.active {
 }
 
 /* Responsive: Below 992px (Bootstrap md/lg) */
 @media (max-width: 992px) {
-.step-circle.completed {
     .card.h-100 {
         min-height: 320px;
     }
 }
-.step-line {
 @media (max-width: 768px) {
     .hero-section {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
     .why-choose-us-section .row, .insurance-types-section .row {
-
-/* --- Accessibility: Reduced Motion --- */
-@media (prefers-reduced-motion: reduce) {
-     .scroll-reveal-up, .scroll-reveal-fade, .cta-pulse, .icon-bounce, .btn, .btn-check + label {
-          transition: none !important;
-          animation: none !important;
-     }
-}
         row-gap: 2rem;
     }
     .testimonial-section {
@@ -209,116 +159,13 @@ body {
 }
 header {
     background: #222;
-    color: #fff;
 }
-nav a {
-    color: #fff;
-    margin: 0 1em;
-    text-decoration: none;
-    font-weight: 500;
-}
-nav a:hover {
-    text-decoration: underline;
-}
+/* Section defaults — do NOT restrict max-width so Bootstrap grid works */
 section {
-    margin: 2em auto;
+    margin: 0 auto;
     background: #fff;
-    padding: 2em;
+    padding: 2em 1em;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Responsive: Phones (max-width: 576px) */
-@media (max-width: 576px) {
-    .hero-section {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-    .hero-section h1, .hero-section .display-3 {
-        font-size: 1.5rem;
-    }
-    .hero-section p.lead {
-        font-size: 1rem;
-    }
-    .insurance-types-section .btn,
-    .insurance-types-section .btn-check + label,
-    .mb-4.text-center .btn,
-    .mb-4.text-center .btn-check + label {
-        display: block;
-        width: 100%;
-        min-height: 44px;
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-    }
-    .card,
-    .card-body {
-        padding: 1rem !important;
-    }
-    .accordion-button {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-    }
-    footer {
-        font-size: 0.9em;
-        padding: 0.8em 0;
-    }
-}
-
-/* Extra-small phones (max-width: 375px) */
-@media (max-width: 375px) {
-    .hero-section h1, .hero-section .display-3 {
-        font-size: 1.1rem;
-    }
-    .hero-section p.lead {
-        font-size: 0.9rem;
-    }
-    .card,
-    .card-body {
-        padding: 0.5rem !important;
-    }
-    .btn,
-    .btn-check + label {
-        font-size: 0.95rem;
-        min-height: 38px;
-    }
-}
-
-/* Tablets (min-width: 577px) and (max-width: 991px) */
-@media (min-width: 577px) and (max-width: 991px) {
-    .hero-section h1, .hero-section .display-3 {
-        font-size: 2rem;
-    }
-    .card,
-    .card-body {
-        padding: 1.5rem !important;
-    }
-}
-
-/* Large desktops (min-width: 1400px) */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1200px;
-    }
-    .hero-section h1, .hero-section .display-3 {
-        font-size: 3.5rem;
-    }
-}
-
-/* Ultra-wide monitors (min-width: 1920px) */
-@media (min-width: 1920px) {
-    .container {
-        max-width: 1600px;
-    }
-    html {
-        font-size: 18px;
-    }
-}
-
-/* Global overflow protection */
-img, video, table {
-    max-width: 100%;
-    height: auto;
-    overflow-x: auto;
 }
 .cta {
     display: inline-block;
@@ -335,41 +182,272 @@ img, video, table {
     background: #005fa3;
 }
 footer {
-    background: #222;
+    background: #003366;
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    /* Removed position: fixed to prevent overlap */
-}
-form label {
-    display: block;
-    margin-top: 1em;
-}
-form input, form select {
-    width: 100%;
-    padding: 0.5em;
-    margin-top: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-form button {
-    margin-top: 1.5em;
-    padding: 0.75em 2em;
-    background: #0077cc;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-form button:hover {
-    background: #005fa3;
 }
 #quoteResult {
     margin-top: 2em;
     font-size: 1.1em;
     color: #007700;
     text-align: center;
+}
+
+/* ===== RESPONSIVE – all devices ===== */
+
+/* Ensure images/tables never overflow */
+img, svg, video, table { max-width: 100%; }
+table { overflow-x: auto; display: block; }
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 576px) {
+    /* Stack insurance-type radio buttons vertically */
+    .d-flex.justify-content-center.gap-3 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .d-flex.justify-content-center.gap-3 label.btn {
+        width: 100%;
+        text-align: center;
+    }
+    /* Bigger tap targets */
+    .btn, .form-control, .form-select {
+        min-height: 44px;
+        font-size: 1rem;
+    }
+    /* Tighten card padding on small screens */
+    .card-body { padding: 1rem !important; }
+    .card.shadow-sm.border-0 .card-body.p-4,
+    .card.shadow-lg .p-4,
+    .card .p-4 { padding: 1rem !important; }
+
+    /* Hero text sizing */
+    .hero-section h1,
+    .hero-section .display-3 { font-size: 1.4rem; }
+    .hero-section p.lead { font-size: 0.95rem; }
+
+    /* Full-width containers */
+    .container { padding-left: 12px; padding-right: 12px; }
+
+    /* Accordion on very small screens */
+    .accordion-button { font-size: 0.95rem; padding: 0.7rem 0.9rem; }
+    .accordion-body { font-size: 0.9rem; padding: 0.75rem; }
+
+    /* Footer compact */
+    footer { font-size: 0.85rem; padding: 1rem 0.5rem; }
+    footer .small { font-size: 0.8rem; }
+
+    /* Quote result table scrollable */
+    #quoteResult table { font-size: 0.85rem; }
+
+    /* Team cards full width */
+    .team-section .col-md-6,
+    .team-section .col-lg-3 { padding-left: 0; padding-right: 0; }
+}
+
+/* Extra-small phones (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 375px) {
+    .hero-section h1,
+    .hero-section .display-3 { font-size: 1.2rem; }
+    .hero-section p.lead { font-size: 0.9rem; }
+    .hero-section .btn-lg { font-size: 0.95rem; padding: 0.5rem 1.2rem; }
+    h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.1rem; }
+    .card-body { padding: 0.75rem !important; }
+    .navbar-brand { font-size: 1rem; }
+}
+
+/* Tablets portrait (iPad Mini, iPad, Android tablets) */
+@media (min-width: 577px) and (max-width: 991px) {
+    .hero-section h1,
+    .hero-section .display-3 { font-size: 2rem; }
+    .card-body { padding: 1.25rem; }
+}
+
+/* Large desktops / monitors (>1400px) */
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+    .hero-section h1,
+    .hero-section .display-3 { font-size: 3.5rem; }
+    .hero-section p.lead { font-size: 1.35rem; }
+}
+
+/* Ultra-wide monitors (>1920px) */
+@media (min-width: 1920px) {
+    .container { max-width: 1600px; }
+    body { font-size: 1.1rem; }
+}
+
+/* ===== ANIMATIONS & MICRO-INTERACTIONS ===== */
+
+/* Scroll-reveal: elements fade/slide in when visible */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Staggered delay for card groups */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.25s; }
+.reveal-delay-3 { transition-delay: 0.4s; }
+.reveal-delay-4 { transition-delay: 0.55s; }
+
+/* Navbar link hover underline animation */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.25s;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 2px;
+    background: #ff9800;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%; left: 0;
+}
+
+/* Icon bounce on card hover */
+.card:hover .display-5,
+.card:focus-within .display-5 {
+    animation: iconBounce 0.5s ease;
+}
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Button pulse for primary CTA */
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,152,0,0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(255,152,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,152,0,0); }
+}
+
+/* Smooth hover lift for all buttons */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Floating CTA bar (mobile) */
+.floating-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(90deg, #222 0%, #ff9800 100%);
+    padding: 0.65rem 1rem;
+    z-index: 1050;
+    display: none;
+    text-align: center;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+}
+.floating-cta .btn {
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .floating-cta { display: block; }
+    /* Add bottom padding so footer isn't hidden behind floating CTA */
+    body { padding-bottom: 56px; }
+}
+
+/* Trust badge strip */
+.trust-badges {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.trust-badges .badge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+.trust-badges .badge-item i {
+    font-size: 1.4rem;
+    color: #ff9800;
+}
+
+/* Counter animation style */
+.counter-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ff9800;
+}
+
+/* Testimonial card style */
+.testimonial-card {
+    border-left: 4px solid #ff9800;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.testimonial-stars { color: #ff9800; }
+
+/* Progress steps on quote page */
+.progress-step {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #dee2e6;
+    color: #666;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    transition: background 0.3s, color 0.3s;
+}
+.progress-step.active {
+    background: #ff9800;
+    color: #fff;
+}
+.progress-line {
+    height: 3px;
+    flex: 1;
+    background: #dee2e6;
+    transition: background 0.3s;
+}
+.progress-line.active {
+    background: #ff9800;
+}
+
+/* Footer link hover */
+footer a.text-light:hover {
+    color: #ff9800 !important;
+    text-decoration: underline !important;
+}
+
+/* Smooth page load */
+body {
+    animation: pageLoad 0.5s ease;
+}
+@keyframes pageLoad {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Prefers-reduced-motion: respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .floating-cta { display: none !important; }
+    body { padding-bottom: 0; }
 }
