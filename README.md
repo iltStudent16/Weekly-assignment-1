@@ -1,4 +1,3 @@
-
 # SummitGuard Insurance Website
 
 A modern, responsive multi-page insurance website for **SummitGuard Insurance**, built with HTML5, CSS (custom + Bootstrap 5), and JavaScript.
