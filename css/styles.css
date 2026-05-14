@@ -179,11 +179,103 @@ header {
 }
 section {
     margin: 2em auto;
-    max-width: 600px;
     background: #fff;
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Responsive: Phones (max-width: 576px) */
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .hero-section h1, .hero-section .display-3 {
+        font-size: 1.5rem;
+    }
+    .hero-section p.lead {
+        font-size: 1rem;
+    }
+    .insurance-types-section .btn,
+    .insurance-types-section .btn-check + label,
+    .mb-4.text-center .btn,
+    .mb-4.text-center .btn-check + label {
+        display: block;
+        width: 100%;
+        min-height: 44px;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+    .card,
+    .card-body {
+        padding: 1rem !important;
+    }
+    .accordion-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    footer {
+        font-size: 0.9em;
+        padding: 0.8em 0;
+    }
+}
+
+/* Extra-small phones (max-width: 375px) */
+@media (max-width: 375px) {
+    .hero-section h1, .hero-section .display-3 {
+        font-size: 1.1rem;
+    }
+    .hero-section p.lead {
+        font-size: 0.9rem;
+    }
+    .card,
+    .card-body {
+        padding: 0.5rem !important;
+    }
+    .btn,
+    .btn-check + label {
+        font-size: 0.95rem;
+        min-height: 38px;
+    }
+}
+
+/* Tablets (min-width: 577px) and (max-width: 991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+    .hero-section h1, .hero-section .display-3 {
+        font-size: 2rem;
+    }
+    .card,
+    .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Large desktops (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+    .hero-section h1, .hero-section .display-3 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Ultra-wide monitors (min-width: 1920px) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    html {
+        font-size: 18px;
+    }
+}
+
+/* Global overflow protection */
+img, video, table {
+    max-width: 100%;
+    height: auto;
+    overflow-x: auto;
 }
 .cta {
     display: inline-block;
