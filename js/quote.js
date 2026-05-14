@@ -534,7 +534,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	// On page load, show saved quotes if any
 	window.addEventListener('DOMContentLoaded', renderSavedQuotes);
-	}
 
 	// Add breakdown row
 	function addBreakdownRow(tbody, factor, userValue, impact) {
