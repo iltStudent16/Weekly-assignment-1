@@ -30,6 +30,21 @@ function validateZipCode(zip) {
 
 // DOMContentLoaded: Build dynamic forms and logic
 window.addEventListener('DOMContentLoaded', function() {
+	// Progress Stepper logic
+	function updateProgress(step) {
+		const steps = [1, 2, 3];
+		steps.forEach(num => {
+			document.querySelectorAll('.step-circle.step-' + num).forEach(el => {
+				el.classList.remove('active', 'completed');
+			});
+		});
+		for (let i = 1; i < step; i++) {
+			document.querySelectorAll('.step-circle.step-' + i).forEach(el => el.classList.add('completed'));
+		}
+		document.querySelectorAll('.step-circle.step-' + step).forEach(el => el.classList.add('active'));
+	}
+	// Initial state
+	updateProgress(1);
 	// Insert hidden class in CSS if not present
 	if (!document.querySelector('style#hidden-style')) {
 		const style = document.createElement('style');
@@ -295,6 +310,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (this.value === 'home') renderHomeFields();
 			if (this.value === 'life') renderLifeFields();
 			clearErrors(document.getElementById('quoteForm'));
+			updateProgress(2);
 		});
 	});
 
@@ -306,6 +322,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		let valid = true;
 		let name, age, zip, coverage;
 		let breakdown = [];
+		updateProgress(2);
 		// Validate and collect data for each type
 		if (type === 'auto') {
 			name = this.autoName;
@@ -322,7 +339,10 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.autoRecord.value) { showError(this.autoRecord, 'Select record.'); valid = false; }
 			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
 			// If not valid, stop
-			if (!valid) return;
+			if (!valid) {
+				updateProgress(2);
+				return;
+			}
 			// Calculate quote
 			const base = 75;
 			let ageFactor = age.value < 25 ? 1.5 : (age.value <= 65 ? 1.0 : 1.3);
@@ -339,6 +359,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				['Driving Record', this.autoRecord.options[this.autoRecord.selectedIndex].text, recordFactor],
 				['Coverage Level', coverage.value.charAt(0).toUpperCase() + coverage.value.slice(1), coverageFactor]
 			];
+			updateProgress(3);
 			showQuoteResult(name.value, 'Auto Insurance', monthly, breakdown);
 		} else if (type === 'home') {
 			name = this.homeName;
@@ -353,7 +374,10 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.homeSqft.value || this.homeSqft.value < 500 || this.homeSqft.value > 10000) { showError(this.homeSqft, '500-10,000 sqft.'); valid = false; }
 			if (!this.homeConstruction.value) { showError(this.homeConstruction, 'Select type.'); valid = false; }
 			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
-			if (!valid) return;
+			if (!valid) {
+				updateProgress(2);
+				return;
+			}
 			// Calculate quote
 			let base = this.homeValue.value * 0.003 / 12;
 			let yearFactor = this.homeYearBuilt.value < 1970 ? 1.4 : (this.homeYearBuilt.value < 2000 ? 1.1 : 1.0);
@@ -372,6 +396,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				['Fire Sprinklers', this.homeSprinklers.checked ? 'Yes' : 'No', sprinklerFactor],
 				['Coverage Level', coverage.value.charAt(0).toUpperCase() + coverage.value.slice(1), coverageFactor]
 			];
+			updateProgress(3);
 			showQuoteResult(name.value, 'Home Insurance', monthly, breakdown);
 		} else if (type === 'life') {
 			name = this.lifeName;
@@ -386,7 +411,10 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.lifeCoverageAmount.value) { showError(this.lifeCoverageAmount, 'Select amount.'); valid = false; }
 			if (!this.lifeExercise.value) { showError(this.lifeExercise, 'Select frequency.'); valid = false; }
 			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
-			if (!valid) return;
+			if (!valid) {
+				updateProgress(2);
+				return;
+			}
 			// Calculate quote
 			let base = this.lifeCoverageAmount.value * 0.0005 / 12;
 			let ageFactor = age.value <= 30 ? 1.0 : (age.value <= 45 ? 1.5 : (age.value <= 60 ? 2.5 : 4.0));
@@ -405,6 +433,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				['Gender', this.lifeGender.options[this.lifeGender.selectedIndex].text, genderFactor],
 				['Coverage Level', coverage.value.charAt(0).toUpperCase() + coverage.value.slice(1), coverageFactor]
 			];
+			updateProgress(3);
 			showQuoteResult(name.value, 'Life Insurance', monthly, breakdown);
 		}
 	});
@@ -441,6 +470,13 @@ window.addEventListener('DOMContentLoaded', function() {
 			result.classList.add('d-none');
 			renderAutoFields();
 			document.querySelector('input#autoType').checked = true;
+		};
+		againBtn.onclick = function() {
+			document.getElementById('quoteForm').reset();
+			result.classList.add('d-none');
+			renderAutoFields();
+			document.querySelector('input#autoType').checked = true;
+			updateProgress(1);
 		};
 		result.appendChild(againBtn);
 		// Save Quote button

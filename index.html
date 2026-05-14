@@ -39,41 +39,48 @@
     </header>
 
     <main>
-        <section class="hero-section text-center py-5" style="background: linear-gradient(90deg, #222 0%, #ff9800 100%); color: #fff;">
+        <section class="hero-section text-center py-5 scroll-reveal-fade" style="background: linear-gradient(90deg, #222 0%, #ff9800 100%); color: #fff;">
             <div class="container">
                 <h1 class="display-3 fw-bold mb-3">Drive with Confidence. Insure with Experience.</h1>
                 <p class="lead mb-4">Over 100 years of trusted auto and home insurance, protecting what matters most to you.</p>
                 <a href="quote.html" class="btn btn-warning btn-lg px-4 py-2 shadow">Get Your Free Quote</a>
+                    <!-- Trust Badges Strip -->
+                    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 py-3 trust-badges scroll-reveal-up">
+                        <div class="badge-item d-flex align-items-center gap-2"><i class="bi bi-patch-check-fill text-success"></i> A+ Rated</div>
+                        <div class="badge-item d-flex align-items-center gap-2"><i class="bi bi-shield-lock-fill text-primary"></i> 256-bit Secure</div>
+                        <div class="badge-item d-flex align-items-center gap-2"><i class="bi bi-people-fill text-warning"></i> 500K+ Customers</div>
+                        <div class="badge-item d-flex align-items-center gap-2"><i class="bi bi-star-fill text-warning"></i> 4.8/5 Rating</div>
+                    </div>
             </div>
         </section>
 
         <!-- Why Choose Us Section -->
-        <section class="why-choose-us-section py-5">
+        <section class="why-choose-us-section py-5 scroll-reveal-up">
             <div class="container">
                 <h2 class="text-center mb-5 fw-bold">Why Choose Us?</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0">
+                        <div class="card h-100 shadow-sm border-0 scroll-reveal-up" style="--sr-delay:0ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-lightning-charge"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-lightning-charge"></i></div>
                                 <h5 class="card-title fw-bold">Fast Quotes</h5>
                                 <p class="card-text">Get your insurance quote in minutes with our streamlined process.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0">
+                        <div class="card h-100 shadow-sm border-0 scroll-reveal-up" style="--sr-delay:100ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-shield-check"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-shield-check"></i></div>
                                 <h5 class="card-title fw-bold">Trusted Coverage</h5>
                                 <p class="card-text">Over a century of experience providing reliable protection for your assets.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0">
+                        <div class="card h-100 shadow-sm border-0 scroll-reveal-up" style="--sr-delay:200ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-headset"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-headset"></i></div>
                                 <h5 class="card-title fw-bold">24/7 Support</h5>
                                 <p class="card-text">Our dedicated team is always available to help, day or night.</p>
                             </div>
@@ -84,36 +91,77 @@
         </section>
 
         <!-- Insurance Types Section -->
-        <section class="insurance-types-section py-5 bg-light">
+        <section class="insurance-types-section py-5 bg-light scroll-reveal-up">
             <div class="container">
                 <h2 class="text-center mb-5 fw-bold">Insurance Types</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
+                        <div class="card h-100 border-0 shadow-sm scroll-reveal-up" style="--sr-delay:0ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-car-front"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-car-front"></i></div>
                                 <h5 class="card-title fw-bold">Auto Insurance</h5>
+                                <!-- Animated Counters Section -->
+                                <section class="counters-section py-5 bg-white scroll-reveal-up">
+                                    <div class="container">
+                                        <div class="row text-center">
+                                            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                                                <div class="display-4 fw-bold counter" data-count="500000">0</div>
+                                                <div class="small">Customers Served</div>
+                                            </div>
+                                            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                                                <div class="display-4 fw-bold counter" data-count="44">0</div>
+                                                <div class="small">Years Experience</div>
+                                            </div>
+                                            <div class="col-6 col-md-3">
+                                                <div class="display-4 fw-bold counter" data-count="50">0</div>
+                                                <div class="small">States Covered</div>
+                                            </div>
+                                            <div class="col-6 col-md-3">
+                                                <div class="display-4 fw-bold counter" data-count="98">0</div>
+                                                <div class="small">% Satisfaction</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
                                 <p class="card-text">Comprehensive coverage for your vehicle, so you can drive with peace of mind.</p>
+                                <a href="quote.html" class="btn btn-warning mt-3 cta-pulse">Get Auto Quote</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
+                        <div class="card h-100 border-0 shadow-sm scroll-reveal-up" style="--sr-delay:100ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-house-door"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-house-door"></i></div>
                                 <h5 class="card-title fw-bold">Home Insurance</h5>
                                 <p class="card-text">Protect your home and belongings from unexpected events and disasters.</p>
+                                <a href="quote.html" class="btn btn-success mt-3 cta-pulse">Get Home Quote</a>
                             </div>
+                                                        <div class="mt-2 text-warning">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-half"></i>
+                                                        </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
+                        <div class="card h-100 border-0 shadow-sm scroll-reveal-up" style="--sr-delay:200ms;">
                             <div class="card-body text-center">
-                                <div class="mb-3 display-5 text-primary"><i class="bi bi-people"></i></div>
+                                <div class="mb-3 display-5 text-primary icon-bounce"><i class="bi bi-people"></i></div>
                                 <h5 class="card-title fw-bold">Bundle & Save</h5>
                                 <p class="card-text">Combine auto and home insurance for the best value and convenience.</p>
+                                <a href="quote.html" class="btn btn-primary mt-3 cta-pulse">Bundle Now</a>
                             </div>
                         </div>
+                                                        <div class="mt-2 text-warning">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
                     </div>
                 </div>
             </div>
@@ -125,6 +173,13 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm">
+                                                        <div class="mt-2 text-warning">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
                             <div class="card-body">
                                 <div class="mb-3 text-warning display-6"><i class="bi bi-star-fill"></i></div>
                                 <blockquote class="blockquote mb-3">“SummitGuard made getting home insurance so easy. Their team explained everything and got me a great rate. Highly recommend!”</blockquote>
@@ -132,6 +187,20 @@
                             </div>
                         </div>
                     </div>
+                                <!-- Conversion CTA Section -->
+                                <section class="cta-section py-5 bg-warning text-center scroll-reveal-up">
+                                    <div class="container">
+                                        <h2 class="fw-bold mb-3">Start Saving Today</h2>
+                                        <p class="lead mb-4">Takes less than 2 minutes. No commitment or payment required. Your info is secure.</p>
+                                        <a href="quote.html" class="btn btn-dark btn-lg px-5 py-3 cta-pulse">Get Your Free Quote</a>
+                                    </div>
+                                </section>
+
+                            <!-- Floating Mobile CTA Bar -->
+                            <div class="fixed-bottom d-md-none bg-dark text-light py-2 px-3 d-flex justify-content-between align-items-center shadow cta-mobile-bar">
+                                <span class="fw-bold">Ready to save?</span>
+                                <a href="quote.html" class="btn btn-warning btn-lg cta-pulse">Get Free Quote</a>
+                            </div>
                     <div class="col-md-4">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">

@@ -5,36 +5,53 @@
     }
     #quoteResult, #quoteResult * {
         visibility: visible !important;
+/* --- Scroll Reveal Animations --- */
+.scroll-reveal-up {
     }
     #quoteResult {
         position: absolute;
         left: 0; right: 0; top: 0;
+.scroll-reveal-fade {
         background: #fff !important;
         color: #000 !important;
         box-shadow: none !important;
+.revealed.scroll-reveal-up {
         padding: 2rem !important;
         margin: 0 !important;
         z-index: 9999;
+.revealed.scroll-reveal-fade {
     }
     .navbar, footer, form, #dynamicFormFields, #savedQuotesSection, #faq-search {
+
+/* --- Counter Animation (handled in JS) --- */
+.counter {
         display: none !important;
     }
     .card, .table {
+.revealed .counter, .counter.revealed {
         background: #fff !important;
         color: #000 !important;
+
+/* --- CTA Pulse Animation --- */
+.cta-pulse {
         box-shadow: none !important;
     }
 }
 
 /* Animated transitions for quote results */
+@keyframes ctaPulse {
 .quote-fade-in {
     animation: quoteFadeIn 1s;
 }
 @keyframes quoteFadeIn {
+
+/* --- Navbar Underline Animation --- */
+.navbar-nav .nav-link {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 /* CSS Reset */
+.navbar-nav .nav-link::after {
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -45,28 +62,45 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f4f8fb;
     color: #222;
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
 }
 
+.navbar-nav .nav-link.active {
 /* Hero Section */
 .hero-section {
+
+/* --- Icon Bounce Animation --- */
+.icon-bounce {
     padding-top: 5rem;
     padding-bottom: 5rem;
+.icon-bounce:hover {
     background: linear-gradient(90deg, #222 0%, #ff9800 100%);
     color: #fff;
+@keyframes iconBounce {
     text-align: center;
 }
 .hero-section h1, .hero-section .display-3 {
     color: #fff;
     font-weight: 700;
 }
+
+/* --- Button Hover Lift --- */
+.btn, .btn-check + label {
 .hero-section p.lead {
     color: #ffe082;
+.btn:hover, .btn:focus, .btn-check:checked + label, .btn-check + label:hover {
 }
 .hero-section .btn-warning {
     font-weight: 600;
+
+/* --- Sticky Mobile CTA Bar --- */
+.cta-mobile-bar {
     border-radius: 6px;
     transition: background 0.2s, transform 0.2s;
     color: #222;
+
+/* --- Trust Badges --- */
+.trust-badges .badge-item {
     background: #ff9800;
     border: none;
 }
@@ -77,10 +111,15 @@ body {
     box-shadow: 0 6px 24px rgba(255,183,0,0.12);
 }
 
+/* --- Progress Stepper --- */
+.progress-stepper-wrapper {
+
 /* Card Hover Effects */
+.step {
 .card {
     transition: box-shadow 0.2s, transform 0.2s;
 }
+.step-circle {
 .card:hover, .card:focus-within {
     box-shadow: 0 8px 32px rgba(0,119,204,0.15), 0 2px 8px rgba(0,0,0,0.05);
     transform: translateY(-4px) scale(1.02);
@@ -95,20 +134,31 @@ footer.bg-dark {
 }
 footer .fw-bold {
     color: #ff9800;
+.step-circle.active {
 }
 
 /* Responsive: Below 992px (Bootstrap md/lg) */
 @media (max-width: 992px) {
+.step-circle.completed {
     .card.h-100 {
         min-height: 320px;
     }
 }
+.step-line {
 @media (max-width: 768px) {
     .hero-section {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
     .why-choose-us-section .row, .insurance-types-section .row {
+
+/* --- Accessibility: Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+     .scroll-reveal-up, .scroll-reveal-fade, .cta-pulse, .icon-bounce, .btn, .btn-check + label {
+          transition: none !important;
+          animation: none !important;
+     }
+}
         row-gap: 2rem;
     }
     .testimonial-section {
