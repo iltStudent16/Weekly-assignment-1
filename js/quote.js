@@ -353,7 +353,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.autoVehicleModel.value) { showError(this.autoVehicleModel, 'Enter model.'); valid = false; }
 			if (!this.autoMileage.value) { showError(this.autoMileage, 'Select mileage.'); valid = false; }
 			if (!this.autoRecord.value) { showError(this.autoRecord, 'Select record.'); valid = false; }
-			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
+			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Coverage type is required.'); valid = false; }
 			// If not valid, stop
 			if (!valid) { updateProgress(2); return; }
 			// Calculate quote
@@ -386,7 +386,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.homeYearBuilt.value || this.homeYearBuilt.value < 1900 || this.homeYearBuilt.value > 2026) { showError(this.homeYearBuilt, 'Year 1900-2026 required.'); valid = false; }
 			if (!this.homeSqft.value || this.homeSqft.value < 500 || this.homeSqft.value > 10000) { showError(this.homeSqft, '500-10,000 sqft.'); valid = false; }
 			if (!this.homeConstruction.value) { showError(this.homeConstruction, 'Select type.'); valid = false; }
-			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
+			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Coverage type is required.'); valid = false; }
 			if (!valid) { updateProgress(2); return; }
 			// Calculate quote
 			let base = this.homeValue.value * 0.003 / 12;
@@ -420,7 +420,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			if (!this.lifeSmoker.value) { showError(this.lifeSmoker[0].closest('.mb-3'), 'Select smoker status.'); valid = false; }
 			if (!this.lifeCoverageAmount.value) { showError(this.lifeCoverageAmount, 'Select amount.'); valid = false; }
 			if (!this.lifeExercise.value) { showError(this.lifeExercise, 'Select frequency.'); valid = false; }
-			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Select coverage.'); valid = false; }
+			if (!coverage.value) { showError(coverage.closest('.mb-3'), 'Coverage type is required.'); valid = false; }
 			if (!valid) { updateProgress(2); return; }
 			// Calculate quote
 			let base = this.lifeCoverageAmount.value * 0.0005 / 12;
