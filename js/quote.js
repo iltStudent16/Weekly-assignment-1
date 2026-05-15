@@ -28,6 +28,12 @@ function validateZipCode(zip) {
 	return /^\d{5}$/.test(zip);
 }
 
+// Utility: Validate name (no special characters)
+function validateName(name) {
+	// Allow only letters, spaces, hyphens, apostrophes (no numbers)
+	return /^[A-Za-z\s'-]+$/.test(name);
+}
+
 // DOMContentLoaded: Build dynamic forms and logic
 window.addEventListener('DOMContentLoaded', function() {
 	// Insert hidden class in CSS if not present
@@ -339,6 +345,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			zip = this.autoZip;
 			coverage = this.autoCoverage;
 			if (!name.value || name.value.trim().length < 2) { showError(name, 'Enter at least 2 characters.'); valid = false; }
+			else if (!validateName(name.value.trim())) { showError(name, 'Only letters, spaces, hyphens, and apostrophes allowed.'); valid = false; }
 			if (!age.value || age.value < 16 || age.value > 100) { showError(age, 'Age 16-100 required.'); valid = false; }
 			if (!validateZipCode(zip.value)) { showError(zip, 'Enter a valid 5-digit ZIP.'); valid = false; }
 			if (!this.autoVehicleYear.value || this.autoVehicleYear.value < 1990 || this.autoVehicleYear.value > 2026) { showError(this.autoVehicleYear, 'Year 1990-2026 required.'); valid = false; }
@@ -372,6 +379,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			zip = this.homeZip;
 			coverage = this.homeCoverage;
 			if (!name.value || name.value.trim().length < 2) { showError(name, 'Enter at least 2 characters.'); valid = false; }
+			else if (!validateName(name.value.trim())) { showError(name, 'No special characters allowed.'); valid = false; }
 			if (!age.value || age.value < 18 || age.value > 100) { showError(age, 'Age 18-100 required.'); valid = false; }
 			if (!validateZipCode(zip.value)) { showError(zip, 'Enter a valid 5-digit ZIP.'); valid = false; }
 			if (!this.homeValue.value || this.homeValue.value < 50000) { showError(this.homeValue, 'Min $50,000.'); valid = false; }
@@ -405,6 +413,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			zip = this.lifeZip;
 			coverage = this.lifeCoverage;
 			if (!name.value || name.value.trim().length < 2) { showError(name, 'Enter at least 2 characters.'); valid = false; }
+			else if (!validateName(name.value.trim())) { showError(name, 'No special characters allowed.'); valid = false; }
 			if (!age.value || age.value < 18 || age.value > 85) { showError(age, 'Age 18-85 required.'); valid = false; }
 			if (!validateZipCode(zip.value)) { showError(zip, 'Enter a valid 5-digit ZIP.'); valid = false; }
 			if (!this.lifeGender.value) { showError(this.lifeGender, 'Select gender.'); valid = false; }
