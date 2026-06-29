@@ -1,0 +1,9 @@
+# RATIONALE
+
+This project uses a bookmark manager domain because it naturally supports list, detail, and add workflows while staying small enough to demonstrate core React patterns clearly. The component hierarchy is centered around `App`, where routes are declared, then wrapped by `BookmarksProvider` for shared state and `Layout` for common navigation. The `Layout` and `Card` components were extracted to keep view files focused on behavior and data mapping rather than repeated page chrome and container UI. `Card` also demonstrates composition via the `children` prop.
+
+State location follows ownership and reuse boundaries. Form input state (`values` and `errors`) remains local in `AddBookmarkView` because no other route needs to edit those fields live. The bookmark collection itself is shared app-wide, so it lives in Context to avoid prop drilling from the route root into every view. I chose Context over lifting state through route props because list and detail both consume the same data and the add route writes to it; lifting would create avoidable prop chains and coupling.
+
+Custom hooks encapsulate cross-cutting concerns: `useBookmarksData` handles initial fetch behavior and exposes a loading/success/error contract, while `useLocalStorage` handles persistence mechanics with a stable API. This keeps context logic declarative: it composes hooks instead of embedding fetch and storage details inline.
+
+Routing uses three routes (`/`, `/bookmark/:id`, `/add`) to match common CRUD-like navigation. The list and detail routes demonstrate `Link` and `useParams`; the add route demonstrates controlled forms and validation. Data fetching is intentionally local JSON to keep the assessment deterministic while still using a real asynchronous fetch pattern, including cleanup through `AbortController` in the effect return function.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "React Docs",
+    "url": "https://react.dev",
+    "category": "Frontend",
+    "ownerEmail": "team@frontend.dev",
+    "notes": "Official React documentation"
+  },
+  {
+    "id": "2",
+    "title": "TypeScript Handbook",
+    "url": "https://www.typescriptlang.org/docs/",
+    "category": "Language",
+    "ownerEmail": "ts@devhub.io",
+    "notes": "Great for advanced typing patterns"
+  },
+  {
+    "id": "3",
+    "title": "Vite Guide",
+    "url": "https://vite.dev/guide/",
+    "category": "Tooling",
+    "ownerEmail": "build@tooling.dev",
+    "notes": "Fast build tool documentation"
+  }
+]
